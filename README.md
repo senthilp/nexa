@@ -145,11 +145,7 @@ The wiki becomes a **compounding artifact** — richer with every source, every 
 5. Start asking questions
 
 ## Next Steps
-
-- Initialize git: `git init && git add . && git commit -m "Initialize Nexa"`
 - Install [Obsidian](https://obsidian.md) for graph visualization
-- Add the [Obsidian Web Clipper](https://obsidian.md/clipper) extension
-- Customize `CLAUDE.md` as your workflow evolves
 
 ---
 
