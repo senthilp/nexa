@@ -4,6 +4,37 @@ This is a chronological record of all operations performed on this knowledge bas
 
 ---
 
+## [2026-04-08] ingest | Developer Productivity Domain Expansion
+
+Ingested two sources expanding knowledge base into developer productivity domain: infrastructure performance optimization (Vercel) and workflow automation (GitHub).
+
+**Sources added:**
+1. **Optimizing Vercel Sandbox snapshots** — Performance case study showing 40s → sub-second restore times
+2. **Improving developer velocity with GitHub merge queue** — Workflow automation eliminating PR babysitting
+
+**Pages created:**
+- 2 source summary pages
+- 2 entity pages (Nicholas C. Zakas, Vercel)
+- 3 concept pages (Filesystem Snapshots, GitHub Merge Queue, Performance Optimization Strategies)
+
+**Key changes:**
+- Updated `overview.md` with new domain synthesis and cross-domain patterns
+- Reorganized `index.md` to group sources and concepts by domain
+- Updated statistics: 3 sources total, 30 total pages
+
+**Main topics covered:**
+- Performance optimization: parallelization, streaming, caching (95% hit rate)
+- Workflow automation: merge queue eliminating manual CI coordination
+- Cross-domain pattern: systematic over ad-hoc applies to both infrastructure and LLM engineering
+
+**Notable insights:**
+- Compound gains: multiple optimizations multiply, not just add
+- Cache design: storing decompressed data skips both network and CPU
+- "Small quality-of-life improvements" can eliminate entire classes of friction
+- Measurement matters: p95 latency for user experience, PASS/FAIL for actionability
+
+---
+
 ## [2026-04-05] ingest | A pragmatic guide to LLM evals for devs
 
 Ingested first source: comprehensive article on systematic LLM evaluation by Hamel Husain.
