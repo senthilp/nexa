@@ -4,8 +4,7 @@
 .LSOverride
 
 # Obsidian
-.obsidian/workspace*
-.obsidian/workspace.json
+.obsidian/
 .trash/
 
 # Temp files
