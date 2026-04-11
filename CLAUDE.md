@@ -83,15 +83,18 @@ Operations: `ingest`, `query`, `lint`, `maintenance`
 When the user asks you to ingest a source from `raw/`:
 
 1. **Read** the source document completely
-2. **Discuss** key takeaways with the user (be concise)
-3. **Create/update** pages:
+2. **Create/update** pages (do NOT discuss with user first—proceed directly):
    - Create a summary page in `wiki/sources/[source-name].md`
    - Update `wiki/overview.md` with new synthesis
    - Create or update relevant entity pages in `wiki/entities/`
    - Create or update relevant concept pages in `wiki/concepts/`
    - Note contradictions with existing pages
-4. **Update** `wiki/index.md` with all new/modified pages
-5. **Append** entry to `wiki/log.md`
+3. **Update** `wiki/index.md` with all new/modified pages
+4. **Append** entry to `wiki/log.md`
+5. **Commit to git**:
+   - Add untracked files from `raw/` (source document)
+   - Add all new/modified wiki pages
+   - Create commit with message: "Ingest: [Source Title]"
 
 **Source page template:**
 ```markdown
