@@ -2,9 +2,10 @@
 
 ## Current State
 
-This knowledge base contains **3 sources** spanning two distinct domains:
+This knowledge base contains **4 sources** spanning three domains:
 1. **LLM Engineering** (1 source): Systematic evaluation and quality assurance
 2. **Developer Productivity** (2 sources): Infrastructure optimization and workflow automation
+3. **AI Infrastructure** (1 source): Agent system architecture and platform design
 
 ## Synthesis
 
@@ -101,21 +102,77 @@ Despite different domains, sources share themes:
 1. **Systematic over ad-hoc**
    - LLM evals: Data-driven evaluation beats vibe-checks
    - Infrastructure: Benchmark-driven optimization beats guesswork
+   - AI agents: Stable interfaces outlast fixed assumptions about capabilities
 
 2. **Measure the right thing**
    - LLM evals: PASS/FAIL over rating scales for actionability
    - Infrastructure: p95 latency over averages for user experience
+   - AI agents: TTFT (what users feel) over internal metrics
 
 3. **Automation compounds**
    - LLM evals: Error analysis → eval suites → continuous improvement flywheel
    - Developer workflow: Merge queue → eliminated babysitting → focus on coding
+   - AI agents: Decoupling → lazy provisioning → independent scaling
 
 4. **Domain-specific beats generic**
    - LLM evals: Custom metrics outperform off-the-shelf scores
    - Infrastructure: Custom `.vhs` format + caching strategy tailored to Vercel's usage patterns
+   - AI agents: Meta-harness accommodates task-specific harnesses
+
+5. **Design for evolution**
+   - LLM evals: Bottom-up discovery adapts to emerging failure modes
+   - Infrastructure: Streaming pipelines + caching allow swapping implementations
+   - AI agents: Interface stability allows implementations to change freely
+
+## New Domain: AI Infrastructure & Agent Systems
+
+[[Scaling Managed Agents: Decoupling the brain from the hands]] introduces a third domain: AI agent platform architecture.
+
+### Core Architectural Insight
+
+**Decouple the "brain" (Claude + harness) from the "hands" (tools/sandboxes) and the "session" (event log).** This virtualization—inspired by how operating systems abstract hardware—allows components to be swapped independently.
+
+**Design for "programs as yet unthought of"**: Interfaces should be stable enough to outlast their implementations. Like `read()` working the same on 1970s disk packs and modern SSDs, agent interfaces (session, harness, sandbox) should accommodate future models and capabilities.
+
+### From Pets to Cattle
+
+**Coupled design** = "pets" (hand-tended servers you can't lose):
+- Session + harness + sandbox in one container
+- Container failure → lost session, requires nursing back to health
+- Upfront provisioning for every session
+
+**Decoupled design** = "cattle" (interchangeable, auto-recoverable):
+- Session as durable external log (`getSession`, `emitEvent`, `getEvents`)
+- Stateless harness recoverable via `wake(sessionId)`
+- Sandbox provisioned lazily via `execute(name, input) → string`
+- Component failures → spin up new one, pull state from session
+
+### Key Wins
+
+1. **Performance**: TTFT -60% (p50), -90% (p95) via lazy provisioning
+2. **Reliability**: Components are cattle—auto-recoverable on failure
+3. **Security**: Credentials isolated from sandbox where generated code runs
+4. **Flexibility**: VPC-agnostic, supports many brains controlling many hands
+
+### Session as External Context
+
+The session log lives *outside* Claude's context window and is programmatically queryable. This solves long-horizon context management without irreversible trimming/compaction decisions.
+
+**Separation of concerns**:
+- **Session**: Durable, recoverable storage (append-only log)
+- **Harness**: Context transformations (fetch via `getEvents()`, engineer for prompt cache, trim)
+
+Can't predict what context engineering future models need, so push it into swappable harness.
+
+### Harness Assumptions Go Stale
+
+Claude Sonnet 4.5 had "context anxiety" near limits → harness added context resets. Opus 4.5 didn't have this behavior → resets became dead weight.
+
+**Meta-harness approach**: Opinionated about interfaces (session, sandbox, harness APIs), unopinionated about implementations. Can run Claude Code, task-specific harnesses, or future harnesses not yet invented.
 
 ## Evolution
 
 - **2026-04-05**: Wiki initialized
 - **2026-04-05**: First source ingested—[[A pragmatic guide to LLM evals for devs]]—establishing foundation for LLM evaluation methodology
 - **2026-04-08**: Domain expansion—ingested [[Optimizing Vercel Sandbox snapshots]] and [[Improving developer velocity with GitHub merge queue]]—adding infrastructure performance and developer workflow optimization
+- **2026-04-11**: Third domain—ingested [[Scaling Managed Agents: Decoupling the brain from the hands]]—adding AI agent platform architecture and system design patterns

@@ -71,7 +71,14 @@ From Vercel case study:
 - [[Parallel Downloads]]
 - [[Streaming Decompression]]
 
+## Cross-domain Pattern
+
+Similar optimization philosophy appears in AI infrastructure:
+- [[Time-to-first-token]] in [[Managed Agents]]: Lazy provisioning eliminates upfront container cost
+- Both measure what users *feel* (TTFT, p95 latency) over internal metrics
+
 ## Sources
 
 - [[Optimizing Vercel Sandbox snapshots]] (2026-04-08)
 - [[Improving developer velocity with GitHub merge queue]] (2026-04-08)
+- [[Scaling Managed Agents: Decoupling the brain from the hands]] (2026-04-11)

@@ -4,6 +4,45 @@ This is a chronological record of all operations performed on this knowledge bas
 
 ---
 
+## [2026-04-11] ingest | Scaling Managed Agents: AI Infrastructure Domain
+
+Ingested Anthropic article on Managed Agents architecture, adding third domain: AI infrastructure and agent system design.
+
+**Source added:**
+- **Scaling Managed Agents: Decoupling the brain from the hands** — Platform architecture for long-horizon agents via virtualized components
+
+**Pages created:**
+- 1 source summary page
+- 4 entity pages (Anthropic, Lance Martin, Gabe Cemaj, Michael Cohen)
+- 8 concept pages (Managed Agents, Agent Decoupling Patterns, Session-based Architecture, Harness Design, Context Engineering, Pets vs Cattle, Time-to-first-token, Interface Stability)
+
+**Key changes:**
+- Updated `overview.md` with AI infrastructure domain synthesis and extended cross-domain patterns
+- Updated `index.md` with new AI Infrastructure section and reorganized entities
+- Updated `performance-optimization-strategies.md` to note TTFT connection
+- Updated statistics: 4 sources total, 43 total pages
+
+**Main topics covered:**
+- Decoupling brain (Claude + harness) from hands (tools/sandboxes) and session (event log)
+- "Design for programs as yet unthought of" — interfaces outlasting implementations
+- Pets-to-cattle transformation via external session storage
+- Security boundaries: credentials isolated from sandbox
+- Performance: 60-90% TTFT reduction via lazy provisioning
+- Meta-harness accommodating future capabilities
+
+**Notable insights:**
+- Harness assumptions go stale as models improve (context anxiety disappeared in Opus 4.5)
+- Session as external context object, programmatically queryable
+- Many brains can control many hands, hands passed between brains
+- Interface stability like OS abstractions (`read()` unchanged since 1970s)
+
+**Cross-domain connections:**
+- Same "measure what users feel" philosophy as infrastructure optimization (TTFT vs p95 latency)
+- Systematic design over ad-hoc implementation (LLM evals, infrastructure, agent systems)
+- Domain-specific beats generic (custom metrics, custom formats, task-specific harnesses)
+
+---
+
 ## [2026-04-08] ingest | Developer Productivity Domain Expansion
 
 Ingested two sources expanding knowledge base into developer productivity domain: infrastructure performance optimization (Vercel) and workflow automation (GitHub).
