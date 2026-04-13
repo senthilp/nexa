@@ -2,10 +2,10 @@
 
 ## Current State
 
-This knowledge base contains **4 sources** spanning three domains:
+This knowledge base contains **5 sources** spanning three domains:
 1. **LLM Engineering** (1 source): Systematic evaluation and quality assurance
 2. **Developer Productivity** (2 sources): Infrastructure optimization and workflow automation
-3. **AI Infrastructure** (1 source): Agent system architecture and platform design
+3. **AI Infrastructure** (2 sources): Agent system architecture and platform design
 
 ## Synthesis
 
@@ -123,6 +123,12 @@ Despite different domains, sources share themes:
    - LLM evals: Bottom-up discovery adapts to emerging failure modes
    - Infrastructure: Streaming pipelines + caching allow swapping implementations
    - AI agents: Interface stability allows implementations to change freely
+   - Agentic infra: "Removing the human from the machine" as infrastructure generations evolve
+
+6. **Context enables capability**
+   - LLM evals: Conversation traces + domain expertise enable accurate judging
+   - AI agents: Session as external context enables long-horizon tasks
+   - Agentic infra: Unified platform context (code + models + runtime) enables autonomous operations
 
 ## New Domain: AI Infrastructure & Agent Systems
 
@@ -170,9 +176,70 @@ Claude Sonnet 4.5 had "context anxiety" near limits → harness added context re
 
 **Meta-harness approach**: Opinionated about interfaces (session, sandbox, harness APIs), unopinionated about implementations. Can run Claude Code, task-specific harnesses, or future harnesses not yet invented.
 
+## New Source: Agentic Infrastructure
+
+[[Agentic Infrastructure]] (Vercel, April 2026) describes the infrastructure transition driven by AI coding agents—a three-part evolution:
+
+### The Three Evolutions
+
+1. **Infrastructure for agents to deploy to**: Programmatic, deterministic surfaces (CLI/API, immutable deployments, preview URLs)
+2. **Infrastructure for building/running agents**: Runtime primitives for agent workload shape (long-lived execution, orchestration, sandboxes, model routing)
+3. **Infrastructure that is agentic**: Systems that autonomously monitor, investigate, and respond to production issues
+
+### The Data
+
+Agents are driving explosive growth in autonomous deployment:
+- Weekly deployments on Vercel **doubled in 3 months**
+- **30% of deployments** are agent-initiated (up 1000% in 6 months)
+  - Claude Code: 75% of agent deployments
+  - Lovable/v0: 6%
+  - Cursor: 1.5%
+- Agent-deployed projects are **20x more likely** to call AI inference providers
+- Pattern: Agents writing AI-native software, agents building agents
+
+### The Bottleneck: Operational Friction
+
+Manual steps (UI clicks, Terraform state, human approvals) break autonomous loops. The solution:
+- **Immutable deployments** (not just DX—absolute prerequisite for machine-driven development)
+- **Preview URLs** (every commit verifiable programmatically)
+- **Programmatic surfaces** (CLI/API, not clicks)
+
+Result: Agents can write → test → verify → ship → rollback autonomously.
+
+### Agent Workload Shape
+
+Different from serverless:
+- **Serverless**: Functions, caching, short requests at edge
+- **Agents**: Long-lived execution, orchestration, model routing, cost controls, sandboxed code execution, abuse resistance
+
+Requires different primitives: workflows, queues, sandboxes, observability, model gateway, fluid compute.
+
+### Infrastructure That Is Agentic
+
+**Traditional**: Code in → logs out → human reads logs → human fixes  
+**Agentic**: Anomaly → platform investigates → reads code/logs → root-cause analysis → proposes fix → tests in sandbox → applies
+
+**Enabler**: Unified platform context (shared visibility across code, model calls, runtime behavior). This context lets infrastructure "interpret what the developer intended, observe what the system actually did, and act on the delta."
+
+**Current**: Human-in-loop approval  
+**Future**: Autonomous remediation
+
+### Philosophy
+
+"The history of cloud computing is the history of removing the human from the machine. Agentic infrastructure is the next evolution, moving us from passive tools that wait for commands to proactive systems that act on our behalf."
+
+### Connection to Managed Agents
+
+Both [[Agentic Infrastructure]] and [[Managed Agents]] address long-running AI agents:
+- **Managed Agents** (Anthropic): Decouple brain-hands-session, stable interfaces, pets → cattle
+- **Agentic Infrastructure** (Vercel): Eliminate operational friction, unified context, autonomous operations
+
+Complementary: Anthropic focuses on agent runtime architecture; Vercel focuses on deployment, observability, and self-healing infrastructure.
+
 ## Evolution
 
 - **2026-04-05**: Wiki initialized
 - **2026-04-05**: First source ingested—[[A pragmatic guide to LLM evals for devs]]—establishing foundation for LLM evaluation methodology
 - **2026-04-08**: Domain expansion—ingested [[Optimizing Vercel Sandbox snapshots]] and [[Improving developer velocity with GitHub merge queue]]—adding infrastructure performance and developer workflow optimization
 - **2026-04-11**: Third domain—ingested [[Scaling Managed Agents: Decoupling the brain from the hands]]—adding AI agent platform architecture and system design patterns
+- **2026-04-13**: AI infrastructure deepened—ingested [[Agentic Infrastructure]]—adding deployment, observability, and autonomous operations for agent-driven development

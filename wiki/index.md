@@ -1,6 +1,6 @@
 # Nexa Index
 
-Last updated: 2026-04-11
+Last updated: 2026-04-13
 
 ## Overview
 - [Overview](overview.md) — High-level synthesis across LLM engineering and developer productivity domains
@@ -16,6 +16,7 @@ Last updated: 2026-04-11
 
 ### AI Infrastructure
 - [Scaling Managed Agents: Decoupling the brain from the hands](sources/scaling-managed-agents.md) — Virtualized agent architecture: brain, hands, session as independent components | Added: 2026-04-11 | Authors: Lance Martin, Gabe Cemaj, Michael Cohen
+- [Agentic Infrastructure](sources/agentic-infrastructure.md) — Infrastructure for/by/as agents: deployment surfaces, agent primitives, autonomous operations | Added: 2026-04-13 | Published: 2026-04-09 | Vercel
 
 ## Entities
 
@@ -28,9 +29,15 @@ Last updated: 2026-04-11
 - [Gabe Cemaj](entities/gabe-cemaj.md) — Anthropic engineer | Sources: 1
 - [Michael Cohen](entities/michael-cohen.md) — Anthropic engineer | Sources: 1
 
+### Tools
+- [Claude Code](entities/claude-code.md) — AI coding agent, 75% of agent deployments on Vercel | Sources: 1
+- [Lovable](entities/lovable.md) — AI coding tool, ~6% of agent deployments | Sources: 1
+- [v0](entities/v0.md) — AI coding tool, ~6% of agent deployments | Sources: 1
+- [Cursor](entities/cursor.md) — AI coding tool, ~1.5% of agent deployments | Sources: 1
+
 ### Organizations
 - [NurtureBoss](entities/nurtureboss.md) — AI leasing assistant startup, primary case study | Sources: 1
-- [Vercel](entities/vercel.md) — Developer platform, infrastructure provider | Sources: 1
+- [Vercel](entities/vercel.md) — Developer platform, agentic infrastructure provider | Sources: 2
 - [Anthropic](entities/anthropic.md) — AI safety/research company, creator of Claude and Managed Agents | Sources: 1
 
 ## Concepts
@@ -64,6 +71,16 @@ Last updated: 2026-04-11
 - [Time-to-first-token](concepts/time-to-first-token.md) — User-perceived latency metric | Sources: 1
 - [Interface Stability](concepts/interface-stability.md) — Abstractions outlasting implementations | Sources: 1
 
+### AI Infrastructure: Agentic Infrastructure
+- [Agentic Infrastructure](concepts/agentic-infrastructure.md) — Three evolutions: for agents to deploy to, for building agents, infrastructure that is agentic | Sources: 1
+- [Operational Friction](concepts/operational-friction.md) — Manual steps breaking autonomous agent workflows | Sources: 1
+- [Immutable Deployments](concepts/immutable-deployments.md) — Prerequisite for machine-driven development | Sources: 1
+- [Preview URLs](concepts/preview-urls.md) — Auto-generated URLs for agent verification | Sources: 1
+- [Agent Workload Shape](concepts/agent-workload-shape.md) — Computational characteristics differing from serverless | Sources: 1
+- [Autonomous Operations](concepts/autonomous-operations.md) — Infrastructure that monitors, analyzes, responds autonomously | Sources: 1
+- [Unified Platform Context](concepts/unified-platform-context.md) — Shared visibility across code, models, runtime enabling agency | Sources: 1
+- [Framework-defined Infrastructure](concepts/framework-defined-infrastructure.md) — Infra derived from application (precursor to agentic) | Sources: 1
+
 ## Comparisons
 *Comparison pages will appear here as queries are filed.*
 
@@ -72,6 +89,6 @@ Last updated: 2026-04-11
 
 ---
 
-**Total pages:** 43 (index + log + overview + 4 sources + 9 entities + 22 concepts)  
-**Total sources:** 4 (1 LLM engineering, 2 developer productivity, 1 AI infrastructure)  
-**Last ingest:** 2026-04-11 (Scaling Managed Agents: Decoupling the brain from the hands)
+**Total pages:** 57 (index + log + overview + 5 sources + 13 entities + 30 concepts)  
+**Total sources:** 5 (1 LLM engineering, 2 developer productivity, 2 AI infrastructure)  
+**Last ingest:** 2026-04-13 (Agentic Infrastructure)

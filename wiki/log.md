@@ -4,6 +4,48 @@ This is a chronological record of all operations performed on this knowledge bas
 
 ---
 
+## [2026-04-13] ingest | Agentic Infrastructure
+
+Ingested Vercel article on agentic infrastructure—the three-part evolution for agent-driven software development.
+
+**Source added:**
+- **Agentic Infrastructure** — Infrastructure for/by/as agents: deployment surfaces, agent primitives, autonomous operations
+
+**Pages created:**
+- 1 source summary page
+- 4 entity pages (Claude Code, Lovable, v0, Cursor—AI coding tools)
+- 1 entity updated (Vercel—expanded with agentic infrastructure positioning)
+- 8 concept pages (Agentic Infrastructure, Operational Friction, Immutable Deployments, Preview URLs, Agent Workload Shape, Autonomous Operations, Unified Platform Context, Framework-defined Infrastructure)
+
+**Key changes:**
+- Updated `overview.md` with agentic infrastructure synthesis, agent deployment data, complementary relationship with Managed Agents
+- Updated `index.md` with new AI Infrastructure: Agentic Infrastructure section, Tools category for coding agents
+- Updated statistics: 5 sources total, 57 total pages
+
+**Main topics covered:**
+- Three evolutions: infra *for* agents to deploy to, *for* building agents, that *is* agentic
+- Agent deployment surge: 30% of Vercel deployments agent-initiated (up 1000% in 6 months)
+- Operational friction as bottleneck: manual steps break autonomous loops
+- Immutable deployments, preview URLs as prerequisites (not just DX)
+- Agent workload shape: long-lived execution, orchestration, sandboxing (vs. serverless)
+- Autonomous operations: infrastructure that monitors, investigates, proposes fixes
+- Unified platform context enables agency: code + models + runtime visibility
+
+**Notable insights:**
+- Agents writing AI-native software: projects deployed by agents 20x more likely to use AI inference
+- Claude Code dominates: 75% of agent-initiated deployments
+- Shift from "developer convenience" to "operational requirement" for immutability/preview URLs
+- Traditional infra: one-way (code in, logs out, human fixes). Agentic infra: closed loop (platform acts)
+- "The history of cloud computing is the history of removing the human from the machine"
+
+**Cross-domain connections:**
+- Complements [[Managed Agents]]: Anthropic focuses on agent runtime (brain-hands-session), Vercel on deployment/observability
+- Echoes [[Performance Optimization Strategies]]: unified platform eliminates multi-system complexity
+- Extends [[Interface Stability]]: infrastructure generations as evolving abstractions
+- New cross-domain pattern: context enables capability (eval traces, session logs, platform context)
+
+---
+
 ## [2026-04-11] ingest | Scaling Managed Agents: AI Infrastructure Domain
 
 Ingested Anthropic article on Managed Agents architecture, adding third domain: AI infrastructure and agent system design.
